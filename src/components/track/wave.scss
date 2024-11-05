@@ -1,0 +1,121 @@
+.bg-music {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 20px;
+    height: 400px;
+    background: linear-gradient(135deg, rgb(106, 112, 67) 0%, rgb(11, 15, 20) 100%);
+
+    .left {
+        width: 75%;
+        height: calc(100% - 10px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .info {
+            display: flex;
+            align-items: center;
+
+            .play-btn {
+                border-radius: 50%;
+                background-color: #f50;
+                height: 50px;
+                width: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                color: white;
+
+                svg {
+                    font-size: 30px;
+                }
+            }
+
+            .song-title {
+                padding: 0 5px;
+                background-color: #333;
+                font-size: 30px;
+                color: white;
+                width: fit-content;
+            }
+
+            .song-artist {
+                padding: 0 5px;
+                margin-top: 10px;
+                background-color: #333;
+                font-size: 20px;
+                color: white;
+                width: fit-content;
+            }
+
+
+        }
+
+        .wave-form-container {
+            position: relative;
+            margin-top: 20px;
+
+            &:hover {
+                .hover-wave {
+                    opacity: 1;
+                }
+            }
+
+            .time,
+            .duration {
+                position: absolute;
+                z-index: 11;
+                top: 50%;
+                margin-top: -1px;
+                transform: translateY(-50%);
+                font-size: 11px;
+                background: rgba(0, 0, 0, 0.75);
+                padding: 2px;
+                color: #ddd;
+
+            }
+
+            .time {
+                left: 0;
+            }
+
+            .duration {
+                right: 0;
+            }
+
+
+            .hover-wave {
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 10;
+                pointer-events: none;
+                height: 100%;
+                width: 0;
+                mix-blend-mode: overlay;
+                background: rgba(255, 255, 255, 0.5);
+                opacity: 0;
+                transition: opacity 0.2s ease;
+
+            }
+
+            .overlay {
+                position: absolute;
+                height: 30px;
+                width: 100%;
+                bottom: 0;
+                backdrop-filter: brightness(0.5);
+            }
+        }
+    }
+
+    .right {
+        width: 25%;
+        padding: 15;
+        display: flex;
+        align-items: center;
+
+    }
+}
