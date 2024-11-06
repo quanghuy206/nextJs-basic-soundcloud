@@ -50,5 +50,8 @@ declare global {
         "createdAt": Date,
         "updatedAt": Date
     }
+    interface IAuthUser {
+
+    }
 
 }

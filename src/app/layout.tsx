@@ -2,7 +2,7 @@ import AppFooter from '@/components/footer/app.footer';
 import AppHeader from '@/components/header/app.header';
 import ThemeRegistry from '@/components/theme-registry/theme.registry';
 import { SessionProvider } from "next-auth/react"
-import NextAuthWrapper from './lib/next.auth.provider';
+import NextAuthWrapper from './lib/next.auth.wrapper';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -10,11 +10,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <ThemeRegistry>
           <NextAuthWrapper>
-            <AppHeader />
             {children}
-            <AppFooter />
           </NextAuthWrapper>
-
         </ThemeRegistry>
       </body>
     </html>
